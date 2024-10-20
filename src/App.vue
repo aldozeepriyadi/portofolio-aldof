@@ -1,26 +1,34 @@
-<template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
-</template>
+  <template>
+    <div id="app">
+      <HeaderComponent />
+      <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+        
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><router-link to="/" class="nav-link">Home</router-link></li>
+            <li class="nav-item"><router-link to="/projects" class="nav-link">Projects</router-link></li>
+            <li class="nav-item"><router-link to="/about" class="nav-link">About</router-link></li>
+            <li class="nav-item"><router-link to="/contact" class="nav-link">Contact</router-link></li>
+          </ul>
+        </div>
+      </nav>
+      <router-view />
+    </div>
+  </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+  <script>
+  import HeaderComponent from './components/Header.vue';
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  export default {
+    name: 'App',
+    components: {
+      HeaderComponent,
+    },
+  };
+  </script>
+
+  <style>
+  #app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
   }
-}
-</script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+  </style>
